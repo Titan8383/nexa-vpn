@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXA VPN</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d1d5db;
+        }
+
+        .menu {
+            background: #1f2937;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+        }
+
+        .hero p {
+            color: #6b7280;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 15px;
+            background: #2563eb;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 9px;
+            text-decoration: none;
+        }
+
+        .services {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .card p {
+            color: #6b7280;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .buy-button {
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 13px 30px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .order-box {
+            display: none;
+            background: white;
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        }
+
+        .order-box h2 {
+            text-align: center;
+        }
+
+        .input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .selected-plan {
+            background: #f3f4f6;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .submit-button {
+            width: 100%;
+            border: none;
+            background: #16a34a;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact {
+            text-align: center;
+            background: white;
+            padding: 50px 20px;
+            margin-top: 30px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 100%;
+                max-width: 330px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>NEXA VPN</h1>
+    <p>اینترنت پرسرعت و پایدار</p>
+</header>
+
+<nav class="menu">
+    <a href="#">خانه</a>
+    <a href="#services">سرویس‌ها</a>
+    <a href="#contact">تماس با ما</a>
+</nav>
+
+<section class="hero">
+    <h2>سرویس پرسرعت خودت رو انتخاب کن</h2>
+    <p>کیفیت بالا، سرعت مناسب و پشتیبانی</p>
+
+    <a class="hero-button" href="#services">
+        مشاهده سرویس‌ها
+    </a>
+</section>
+
+<section class="services" id="services">
+
+    <h2>پلن‌های VPN</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>10 گیگ</h3>
+            <p>مناسب مصرف معمولی</p>
+            <div class="price">150,000 تومان</div>
+
+            <button class="buy-button"
+                onclick="openOrder('10 گیگ','150,000 تومان')">
+                خرید سرویس
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>20 گیگ</h3>
+            <p>مناسب مصرف متوسط</p>
+            <div class="price">250,000 تومان</div>
+
+            <button class="buy-button"
+                onclick="openOrder('20 گیگ','250,000 تومان')">
+                خرید سرویس
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>30 گیگ</h3>
+            <p>مناسب مصرف بالا</p>
+            <div class="price">300,000 تومان</div>
+
+            <button class="buy-button"
+                onclick="openOrder('30 گیگ','300,000 تومان')">
+                خرید سرویس
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>40 گیگ</h3>
+            <p>مناسب مصرف سنگین</p>
+            <div class="price">350,000 تومان</div>
+
+            <button class="buy-button"
+                onclick="openOrder('40 گیگ','350,000 تومان')">
+                خرید سرویس
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<div class="order-box" id="orderBox">
+
+    <h2>ثبت سفارش</h2>
+
+    <div class="selected-plan">
+        سرویس:
+        <strong id="planName"></strong>
+
+        <br><br>
+
+        قیمت:
+        <strong id="planPrice"></strong>
+    </div>
+
+    <input
+        class="input"
+        id="customerName"
+        type="text"
+        placeholder="نام و نام خانوادگی">
+
+    <input
+        class="input"
+        id="customerPhone"
+        type="tel"
+        placeholder="شماره موبایل">
+
+    <button
+        class="submit-button"
+        onclick="submitOrder()">
+        ثبت سفارش
+    </button>
+
+</div>
+
+<section class="contact" id="contact">
+
+    <h2>پشتیبانی</h2>
+
+    <p>
+        Telegram: @NexaShopVpn_bot
+    </p>
+
+</section>
+
+<footer>
+    © 2026 NEXA VPN
+</footer>
+
+<script>
+
+    let selectedPlan = "";
+    let selectedPrice = "";
+
+    function openOrder(plan, price) {
+
+        selectedPlan = plan;
+        selectedPrice = price;
+
+        document.getElementById("planName").innerText = plan;
+        document.getElementById("planPrice").innerText = price;
+
+        document.getElementById("orderBox").style.display = "block";
+
+        document.getElementById("orderBox").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+
+    async function submitOrder() {
+
+        let name =
+            document.getElementById("customerName").value;
+
+        let phone =
+            document.getElementById("customerPhone").value;
+
+
+        if (name === "" || phone === "") {
+
+            alert("لطفاً نام و شماره موبایل را وارد کنید.");
+
+            return;
+        }
+
+
+        try {
+
+            let response = await fetch(
+                "https://nexa-vpn-production.up.railway.app/order",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        name: name,
+                        phone: phone,
+                        plan: selectedPlan,
+                        price: selectedPrice
+
+                    })
+                }
+            );
+
+
+            let result = await response.json();
+
+
+            if (result.success) {
+
+                alert(
+                    "✅ سفارش با موفقیت ارسال شد!\n\n" +
+                    "سرویس: " + selectedPlan +
+                    "\nقیمت: " + selectedPrice
+                );
+
+                document.getElementById("customerName").value = "";
+                document.getElementById("customerPhone").value = "";
+
+            } else {
+
+                alert("❌ خطا در ثبت سفارش.");
+
+            }
+
+
+        } catch (error) {
+
+            console.log(error);
+
+            alert(
+                "❌ ارتباط با سرور برقرار نشد."
+            );
+
+        }
+
+    }
+
+</script>
+
+</body>
+              </html>
