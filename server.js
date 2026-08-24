@@ -7,7 +7,7 @@ app.use(express.json());
 const BOT_TOKEN = process.env.BOT_TOKEN;
 
 // آیدی عددی تلگرام خودت را بعداً اینجا قرار می‌دهیم
-const CHAT_ID = "YOUR_CHAT_ID";
+const CHAT_ID = "2077635505";
 
 
 app.get("/", (req, res) => {
